@@ -309,14 +309,16 @@ echo "</ul>";
 
 /* 3eme-Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000 */
 
-$x = 7;
+$i=7; 
 
 echo "<ul>";
-for($i=7 ; $i<1000;$i++)
+while($i<1000)
 {
     if($i % 7 == 0)
     {
-    echo "<li>$i</li>";}
+    echo "<li>$i</li>"; 
+}
+$i++;
 }
 echo "</ul>";
 
