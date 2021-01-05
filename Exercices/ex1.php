@@ -314,13 +314,34 @@ $i=7;
 echo "<ul>";
 while($i<1000)
 {
-    if($i % 7 == 0)
-    {
-    echo "<li>$i</li>"; 
+    $i=$i+7; 
 }
-$i++;
-}
+echo "<li>$i</li>";
 echo "</ul>";
+"</ul>";
+
+/* 3eme-Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000 */
+
+
+   
+echo "<ul>";  
+    for ($x = 7; $x <= 1000; $x += 7)
+    {
+        echo "<li>$x</li>" ;
+    }       
+echo "</ul>";
+
+/* 3eme-Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000 */
+
+$x = 7; 
+     while($x <= 1000)
+    { $x += 7;
+     
+        echo "<li>$x</li>" ;
+    }    
+    echo "</ul>";
+"</ul>";
+
 
 
 // 4eme-Utilisez la boucle for pour tester si le nombre 3457 est premier
@@ -338,8 +359,131 @@ for ($i = 2; $i < 3457; $i++) {
     }
 }
 
+// 4emebis-Utilisez la boucle for pour tester si le nombre 3457 est premier
 
+$i = 2;
+$N = 3457;
+echo "<ul>";
+for ($i = 2; $i <= $N; $i++) {
+    if ($N % $i == 0 && $N!=$i) {
+        echo $N." n'est pas un nombre premier";
+        break;
+    }
+    else if($N==$i) {
+        echo $N."est un nombre premier";
+        break;
+    }
+}
+echo "</ul>";
+
+
+
+$cars[0] = "Dacia";
+$cars[1] = "BMW";
+$cars[2] = "Toyota";
+
+
+$cars = ["Dacia", "BMW", "Toyota"]; // similaire aux 3 lignes précédentes
+$cars = array("Dacia", "BMW", "Toyota", "Peugeot"); // similaire à la ligne précédente
+
+$cars[] = "Renault";  // permet d'ajouter un élément en fin de tableau
+$cars[] = "Mercedes";
+echo "<p>".$cars[0]." et ".$cars[2]."</p>";
+$cars[2] = "Mitsubishi";
+echo "<p>".$cars[0]." et ".$cars[2]."</p>";
+
+echo "<p>".count($cars)."</p>"; // fonction count($variable) qui permet de mesurer la taille d'une variable
+
+
+//PARCOURS DE TABLEAU
+$taille = count($cars);
+echo "<ol type='A' reversed>";
+for($i = 0; $i < $taille ;$i++) {
+    echo "<li>".$cars[$i]."</li>";
+}
+echo "</ol>";
 ?>
+
+<!-- Exemples d'utilisation correcte de 'ul' et 'ol' -->
+
+
+<h2> Ma recette de gateau </h2>
+
+<ul>
+    <h3> Ingrédients : </h3>
+    <li> 100g de farine </li>
+    <li> 10g de sucre </li>
+    <li> 3 carrés de chocolat </li>
+</ul>
+<ol>
+    <h3> Réalisation : </h3>
+    <li> bla bla </li>
+    <li> bla bli blou</li>
+    <li> bla bli blo</li>
+</ol>
+<?php
+
+
+/* Exercice :
+    Écrire un tableau qui contient tous les mois de l'année puis l'afficher
+    grâce aux 3 différentes boucles (for, while et do,while).*/
+// boucle For:
+$Mois = array("Janvier", "Fevrier", "Mars", "Avril","Mai", "Juin", "Juillet", "Aout","Septembre", "Octobre", "Novembre", "Decembre");
+for ($numero = 0; $numero < 12; $numero++)
+{
+    echo $Mois[$numero] . '<br/>';
+}
+// Boucle While:
+$Mois = array("Janvier", "Fevrier", "Mars", "Avril","Mai", "Juin", "Juillet", "Aout","Septembre", "Octobre", "Novembre", "Decembre");
+
+$numero = 0;
+while ($numero < 12)
+    {
+    echo $Mois[$numero] . '<br />';
+    $numero++;
+}
+
+// Boucle do,while:
+
+/*     Exercice :
+    Écrire un tableau associatif, qui associe des pays à des capitales 
+    (France, Norvège, Sénégal, Inde, Chine, Mexique).
+    Afficher ces capitales grâce à un foreach.
+*/
+
+
+$Pays['France'] = 'Paris';
+$Pays['Norvège'] = 'Oslo';
+$Pays['Sénégal'] = 'Dakar';
+$Pays['Inde'] = 'New Delhi';
+$Pays['Chine'] = 'Pekin';
+$Pays['Mexique'] = 'Mexico';
+
+foreach($Pays as $element)
+{
+    echo $element . '<br />'; 
+}
+?>
+
+<?php
+/*Écrire un tableau x avec comme données "A", "B", "C" et "D".
+    Un tableau y avec comme données "E", "F", "G" et "H"
+
+    À l'aide d'une boucle de votre choix, mettre y à la suite de x.
+    À l'aide d'une boucle de votre choix, afficher x.
+*/
+$X = array("A", "B", "C", "D");
+$Y = array("E", "F", "G", "H");
+array_push($X,"E", "F", "G", "H");
+
+foreach($X as $element)
+{
+    echo $element . '<br />'; 
+}
+?>
+
+
+
 
 </body> 
 </html>
