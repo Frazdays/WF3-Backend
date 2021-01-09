@@ -251,7 +251,6 @@
 
     
     $x = 1;
-
     echo "<ul>";
     while($x <= 5) {
         echo "<li>$x</li>";
@@ -277,110 +276,17 @@
     /* TP 1
     - Déclarer une variable $x = 1 et une variable $y = 835
     - En utilisant la boucle "while" ajoutez successivement 1 à x
-      jusqu'à qu'il soit égale à y. Dans ce cas, affichez x et y
+      jusqu'à qu'il soit égal à y. Dans ce cas, affichez x et y
     - Donnez une variante de cet boucle avec la boucle do... while
     - Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000
     - Utilisez la boucle for pour tester si le nombre 3457 est premier
 */
- /* 1er - Déclarer une variable $x = 1 et une variable $y = 835
-    - En utilisant la boucle "while" ajoutez successivement 1 à x
-      jusqu'à qu'il soit égale à y. Dans ce cas, affichez x et y */
-
-$x=1;
-$y=835;
-echo "<ul>";
-while ($x < $y) {
-    $x++;
-}
-echo "<li>$y</li>";
-echo "<li>$x</li>";
-echo "</ul>";
-/* 2eme - - Donnez une variante de cet boucle avec la boucle do... while */
-
-$x = 1;
-$y=835;
-echo "<ul>";
-do {
-    $x++;
-} while ($x<$y);
-echo "<li>$y</li>";
-echo "<li>$x</li>";
-echo "</ul>";
-
-/* 3eme-Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000 */
-
-$i=7; 
-
-echo "<ul>";
-while($i<1000)
-{
-    $i=$i+7; 
-}
-echo "<li>$i</li>";
-echo "</ul>";
-"</ul>";
-
-/* 3eme-Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000 */
-
-
-   
-echo "<ul>";  
-    for ($x = 7; $x <= 1000; $x += 7)
-    {
-        echo "<li>$x</li>" ;
-    }       
-echo "</ul>";
-
-/* 3eme-Ecrivez une boucle qui affiche les multiples du nombre 7 inférieurs à 1000 */
-
-$x = 7; 
-     while($x <= 1000)
-    { $x += 7;
-     
-        echo "<li>$x</li>" ;
-    }    
-    echo "</ul>";
-"</ul>";
-
-
-
-// 4eme-Utilisez la boucle for pour tester si le nombre 3457 est premier
-
-
-for ($i = 2; $i < 3457; $i++) {
-    if (3457 % $i == 0)
-    {
-        echo " Le nombre 3457 n'est pas premier";
-        break;
-    }  
-    else if ($i==3456)
-    {
-        echo "Le nombre 3457 est premier";
-    }
-}
-
-// 4emebis-Utilisez la boucle for pour tester si le nombre 3457 est premier
-
-$i = 2;
-$N = 3457;
-echo "<ul>";
-for ($i = 2; $i <= $N; $i++) {
-    if ($N % $i == 0 && $N!=$i) {
-        echo $N." n'est pas un nombre premier";
-        break;
-    }
-    else if($N==$i) {
-        echo $N."est un nombre premier";
-        break;
-    }
-}
-echo "</ul>";
-
-
 
 $cars[0] = "Dacia";
 $cars[1] = "BMW";
 $cars[2] = "Toyota";
+
+
 
 
 $cars = ["Dacia", "BMW", "Toyota"]; // similaire aux 3 lignes précédentes
@@ -394,19 +300,18 @@ echo "<p>".$cars[0]." et ".$cars[2]."</p>";
 
 echo "<p>".count($cars)."</p>"; // fonction count($variable) qui permet de mesurer la taille d'une variable
 
-
-//PARCOURS DE TABLEAU
+// PARCOURS DE TABLEAU
 $taille = count($cars);
 echo "<ol type='A' reversed>";
 for($i = 0; $i < $taille ;$i++) {
     echo "<li>".$cars[$i]."</li>";
 }
 echo "</ol>";
+
+
 ?>
 
 <!-- Exemples d'utilisation correcte de 'ul' et 'ol' -->
-
-
 <h2> Ma recette de gateau </h2>
 
 <ul>
@@ -421,69 +326,198 @@ echo "</ol>";
     <li> bla bli blou</li>
     <li> bla bli blo</li>
 </ol>
+
+<h2> Les tableaux associatifs </h2>
+
 <?php
 
+    $age = array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
 
-/* Exercice :
+    foreach ($age as $donneeAge) {
+        echo "<p>".$donneeAge."</p>";
+    }
+
+    /*
+    Exercice :
     Écrire un tableau qui contient tous les mois de l'année puis l'afficher
-    grâce aux 3 différentes boucles (for, while et do,while).*/
-// boucle For:
-$Mois = array("Janvier", "Fevrier", "Mars", "Avril","Mai", "Juin", "Juillet", "Aout","Septembre", "Octobre", "Novembre", "Decembre");
-for ($numero = 0; $numero < 12; $numero++)
-{
-    echo $Mois[$numero] . '<br/>';
-}
-// Boucle While:
-$Mois = array("Janvier", "Fevrier", "Mars", "Avril","Mai", "Juin", "Juillet", "Aout","Septembre", "Octobre", "Novembre", "Decembre");
-
-$numero = 0;
-while ($numero < 12)
-    {
-    echo $Mois[$numero] . '<br />';
-    $numero++;
-}
-
-// Boucle do,while:
-
-/*     Exercice :
+    grâce aux 3 différentes boucles (for, while et do,while).
+    Exercice :
     Écrire un tableau associatif, qui associe des pays à des capitales 
     (France, Norvège, Sénégal, Inde, Chine, Mexique).
     Afficher ces capitales grâce à un foreach.
-*/
-
-
-$Pays['France'] = 'Paris';
-$Pays['Norvège'] = 'Oslo';
-$Pays['Sénégal'] = 'Dakar';
-$Pays['Inde'] = 'New Delhi';
-$Pays['Chine'] = 'Pekin';
-$Pays['Mexique'] = 'Mexico';
-
-foreach($Pays as $element)
-{
-    echo $element . '<br />'; 
-}
-?>
-
-<?php
-/*Écrire un tableau x avec comme données "A", "B", "C" et "D".
-    Un tableau y avec comme données "E", "F", "G" et "H"
-
+    Exercice :
+    Écrire un tableau x avec comme données "A", "B", "C" et "D".
+    Écrire un tableau y avec comme données "E", "F", "G" et "H"
     À l'aide d'une boucle de votre choix, mettre y à la suite de x.
     À l'aide d'une boucle de votre choix, afficher x.
-*/
-$X = array("A", "B", "C", "D");
-$Y = array("E", "F", "G", "H");
-array_push($X,"E", "F", "G", "H");
+    */
 
-foreach($X as $element)
-{
-    echo $element . '<br />'; 
-}
+
+    $age = array("Linda"=>"10","Zakaria"=>"27",
+                "Fatima"=>"37","Rida"=>"43","Nadia"=>"15");
+    echo "<ul>";
+    foreach($age as $name=>$value) {
+        echo "<li>".$name." a ".$value." printemps !"."</li>";
+        if ($value <= 10) echo "<p>Enfant !</p>";
+        else if ($value > 10 && $value < 18) echo "<p>Ado !</p>";
+        else if ($value >= 30 && $value < 40) echo "<p>Alors, la trentaine ?</p>";
+        else if ($value == 43) echo "<p>Tu t'apellerais pas Rida, par hasard ?</p>";
+        else if ($value < 30 && $value >= 20) echo "<p>La vingtaine !</p>";
+    }
+    echo "</ul>";
+
+    echo "<p>".print_r(array_keys($age))."</p>"; // affichage des clefs
+    echo "<p>".print_r(array_values($age))."</p>"; // affichages des valeurs
+
+
+    echo "<p>".print_r($age)."</p>"; // affiche le tableau avec + d'info (type, clés, valeurs...)
+
+    $cars = array("Dacia", "BMW", "Toyota"); // création du tableau
+
+    sort($cars); // tri dans l'ordre alphabétique
+    echo "<p>".print_r($cars)."</p>"; // affichage
+
+    $numbers=array(4,6,2,22,11); // création du tableau 
+    sort($numbers); // tri dans l'ordre croissant
+    echo "<p>".print_r($numbers)."</p>"; // affichage
+
+    rsort($numbers); // tri dans l'ordre inverse (décroissant)
+    echo "<p>".print_r($numbers)."</p>";
+
+    $os = array("Mac", "NT", "Irix", "Linux"); // tableau des systèmes d'exploitation
+ 
+    if (in_array("Irix", $os)) {
+        echo "<p>J'ai Irix</p>";
+    }
+    if (in_array("mac", $os)) {
+        echo "J'ai mac"; // ne s'affiche pas car sensible à la casse
+    }
+
+    $array1 = array("color" => "red", 2, 4, "size" => "tall", "yes", 7);
+    echo "<p>". print_r($array1)."</p>";
+
+    // Rappel "array_keys": https://www.php.net/manual/fr/function.array-keys.php
+    echo "<p>". print_r(array_keys($array1))."</p>";
+
+    $array2 = array("a", "B", "color" => "green", "shape" => "trapezoid", 4);
+    $result = array_merge($array1, $array2);
+    // tri des données : d'abord les "strings" et ensuite les "integers"
+    sort($result);
+    echo "<p>". print_r($result)."</p>";
+
+    // LES FONCTIONS :
+
+    writeMsg("Sayah", "El Yatim", 3); // appel de fonction
+
+    /* 1) Modifier la fonction writeMsg() pour qu'elle accepte 
+    un troisème argument : l'entier $repetitions. 
+    writeMsg() repetera le echo autant de fois que $repetitions
+    Exemple : 
+    writeMsg("oh", "ah", 3);
+    Résultat :
+    Hello oh ah!
+    Hello oh ah!
+    Hello oh ah!
+    2) Écrire une fonction paragraph() qui prend en argument une chaîne de caractères
+    et qui l'affiche en l'entourant d'une balise <p>
+    Exemple : 
+    paragraph("Hello");
+    <p>Hello</p>
+    3) Modifier writeMsg() pour qu'elle appelle la fonction paragraph() afin 
+    de renvoyer un résultat correct pour le web
+    */
+
+    function writeMsg($firstname, $name, $repetitions) { // definition de fonction
+        for($counter = 1; $counter <= $repetitions; $counter++)
+            paragraph("Hello ".$firstname." ".$name."!");
+    }
+
+    writeMsg("Sayah", "XYZW", 4);
+
+
+    function paragraph($string) { // je définis la fonction "paragraph"
+        echo "<p>".$string."</p>";
+    }
+
+    paragraph("Coucou les amis."); // j'apelle ma fonction
+
+    function tag($sentence, $tagname = "p"){
+        echo "<".$tagname.">".$sentence."</".$tagname.">";
+    }
+
+    tag("bonjour", "p");
+    $monSuperMessage = "Je suis un message hyper important.";
+    
+    // les appels fonctionnent même avec des variables :
+    tag($cars[0], "blockquote");
+    tag($monSuperMessage, "p");
+
+    function salutation() {
+        echo tag("Bonjour bonjour bonjour !");
+        echo tag("C'est super d'être ici");
+        echo tag("Je suis en train de travailler.");
+    };
+
+    salutation();
+
+    // Fonctions avec paramètres par défaut :
+    function greetings($nom = "El Yatim", $prenom = "okay") {
+        echo tag("Hi " . $nom ." ". $prenom . "!");
+    }
+    // Test des arguments par défaut
+    greetings();
+    // Test avec arguments
+    greetings("El Yatim", "yes");
+
+    function somme($x, $y) {
+        return $x + $y;
+    };
+
+   $petroleFrance = somme(789346589, 234525);
+   $petroleItalie = somme(85405540, 2847583);
+
+   // calcul de somme de sommes
+   echo somme($petroleFrance,  $petroleItalie);
+   // même chose que l'appel précédent
+   echo somme(
+            somme(789346589, 234525),
+            somme(85405540, 2847583)
+    );
+
+    // La portée des variables
+    $nbr = 5;
+
+    function myFunc() {
+
+        echo tag($nbr);
+        
+    };
+    $xyz = 100;
+
+    myFunc();
+    echo $xyz;
+
+    /* Exercices :
+    1) Écrire une fonction compare(), qui prend deux arguments et compare leur valeur
+    (égalité, plus grand ou plus petit que).
+    Exemple d'utilisation :
+    compare(12, 24);
+    12 est plus petit que 24 !
+    2) Écrire une fonction jumpsToZero() qui prend comme argument un nombre eniter positif et qui
+    affiche e compte d'un nombre sur deux jusqu'à zéro inclus.
+    Exemple d'utilisation :
+    jumpsToZero(11);
+    9
+    7
+    5
+    3
+    1
+    */
+    
+alt gr6
+
+        
 ?>
 
-
-
-
-</body> 
+</body>
 </html>
