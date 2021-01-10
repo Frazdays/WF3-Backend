@@ -49,9 +49,6 @@ else {
     echo "<p>Vous bénificier d'une réduction de 2% sur tous les autres ". $cat." le nouveau prix serait de". $Nprix."€ </p>";
         }
 
-
-
-
 //fonction from scratch qui s'appellent plus petit
     // exemple 1
     $tableau = array(112 , 50 , 85 , 125 , 13 , 78 , 300 );
@@ -96,6 +93,7 @@ else {
     }
     listePuceHTML($titre , $tableauLegumes);
     echo"</div>";
+
 /* 2.1 Variante : affichez la liste <ul><li> 
 avec les légumes(si on reprend le même exemple ci-dessus)
  mais CLASSÉS dans l'ordre alphabétique*/
@@ -118,7 +116,8 @@ avec les légumes(si on reprend le même exemple ci-dessus)
     listePuceHTML1($titre , $tableauLegumes);
 echo"</div>";
 
-//3.Créer une fonction from scratch qui s'appelle remplacerCertainesLettres(). 
+//3.Créer une fonction from scratch qui s'appelle remplacerCertainesLettres().
+ 
 $chaine1 = "Bonjour les amis";
 $nouvelle_chaine=str_replace("pl", "m", $chaine1,);
 echo"<div>";
