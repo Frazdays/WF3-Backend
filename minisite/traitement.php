@@ -17,9 +17,21 @@
         <main>
             <section>
                 <h1>Traitement.php</h1>
+                <p>Infos bien reçues, merci !</p>
                 <?php
                     $nameUser=$_GET["nom"];
-                    echo "<p>Bonjour, votre nom est : ".$nameUser.", Enchanté.</p>";
+                    $prenomUser=$_GET["prenom"];
+                    $email=$_GET["email"];
+                    $sexe=$_GET["civilite"];
+                    $villeNaiss=$_GET["villeNaiss"];
+                    $message=$_GET["message"];
+                    // ajout de $nameUser dans la base de donnée si besoin
+                    echo "<p>Bonjour, vous vous appelez : ".$nameUser." ".$prenomUser.", Enchanté.</p>";
+                    echo "<p>votre mail est : ".$email.".</p>";
+                    echo "<p>Vous êtes un ".$sexe.".</p>";
+                    echo "<p>Vous êtes né à ".$villeNaiss.".</p>";
+                    echo "<p>Votre message :</p>";
+                    echo $message."</p>";
                 ?>
             </section>
         </main>

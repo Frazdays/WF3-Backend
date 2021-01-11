@@ -41,18 +41,53 @@
                     - method qui permet de choisir comment les données seront envoyées (GET ou POST)
                     (si vous laissez la valeur de l'attribute method vide, par défaut se sera GET qui sera pris)
                 -->
+                <p>Tous les champs notés * sont obligatoires.</p>
                 <form action="traitement.php" method="GET">
                     <!-- ici tout le formulaire -->
                     <!-- label permet juste d'indiquer ce que vous voulez dans le champ suivant -->
                     <!-- et input qui permet de créer le champ de texte -->
-                    <label for="nom">Nom :</label>
-                    <input type="text" name="nom" id="nom">
+               
+                        <label for="nom">Nom* :</label>
+                        <input type="text" name="nom" id="nom" required><br>
+                
                     <!-- les attributs (indispensables) de input sont type et name 
                         - type permet de spécifier le type de donnée attendue 
                         - name permet de définir la clé que l'on utilisera dans la page traitement.php ($_GET["nom"]) 
                         - id (permet de lier avec le for du label)
                         ...
-                    --> 
+                    -->
+                
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" name="prenom" id="prenom"><br>
+
+                        <label for="email">mail* :</label>
+                        <input type="email" name="email" id="email" required><br>
+
+                        <label for="password">votre mot de passe* :</label>
+                        <input type="password" name="password" id="password" required><br>
+
+                        <p>Civilité</p>
+                        <label for="femme">femme :</label>
+                        <input type="radio" name="civilite" id="femme" value="1">
+                        <label for="homme">homme :</label>
+                        <input type="radio" name="civilite" id="homme" value="2">
+                        <label for="autre">autre :</label>
+                        <input type="radio" name="civilite" id="autre" value="3">
+                        <br>
+                 
+                        <label for="villeNaiss">Votre ville de naissance : </label>
+                        <select name="villeNaiss" id="villeNaiss" required>
+                            <option value="" disabled selected>Choisissez votre ville</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Marseille">Marseille</option>
+                            <option value="Lyon">Lyon</option>
+                            <option value="Lille">Lille</option>
+                            <option value="Nice">Nice</option>
+                        </select>
+                        <br>
+                        <label for="message">Votre message :</label>
+                        <textarea name="message" id="message"></textarea>
+
                     <!-- bouton d'envoi du formulaire (doit être dans la <form> pour rappel) -->
                     <!-- c'est une balise input, dont le type est submit. L'attribut value est facultatif : il permet de personnaliser le texte du bouton. Si vous n'en mettez pas ce sera "Envoyer". -->
                     <!-- -->

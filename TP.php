@@ -132,6 +132,14 @@ echo"<div>";
         remplacerCertainesLettres("Les cours de programmation Web sont trop cools");
 echo"</div>";
 ?>
-
+  <h1>Page sécurisée</h1>
+    <p>Quel est le mot de passe ?</p>                
+    <!-- 
+        1. créez un mini formulaire qui demande le mot de passe à l'utilisateur
+        2. traitez ensuite le mot de passe envoyé et comparez le à un mot de passe prédéfini.
+        3. Si le mot de passe est correct, vous félicitez, vous souhaitez la bienvenue à l'utilisateur
+        4. Si le mot de passe est INCORRECT, vous l'invitez à recommencer sa saisie...
+    -->
+    
 </body>
 </html>
